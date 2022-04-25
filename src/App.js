@@ -13,6 +13,7 @@ import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import { ToastContainer } from 'react-toastify';
+import Order from './Pages/Order/Order';
 
 
 function App() {
@@ -48,6 +49,11 @@ function App() {
         <Route path="/manage" element={
            <RequireAuth>
                <ManageServices/>
+           </RequireAuth>
+        }> </Route>
+        <Route path="/orders" element={
+           <RequireAuth>
+               <Order/>
            </RequireAuth>
         }> </Route>
         <Route path="*" element={<NotFound/>}></Route>
