@@ -7,7 +7,8 @@ import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "./SocialLogin";
 
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
  import 'react-toastify/dist/ReactToastify.css';
 import PageTitle from "../Shared/PageTitle/PageTitle";
 
@@ -88,7 +89,7 @@ const Login = () => {
       <p>New to Genius Car <Link to='/register' className="text-primary pointer-cursor pe-auto text-decoration-none" onClick={navigateRegister}>Please Register</Link></p>
       <p>Forget Password? <Button className=" btn btn-link text-light pointer-cursor pe-auto text-decoration-none" onClick={resetPassword}>Reset Password</Button></p>
       <SocialLogin/>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </div>
   );
 };

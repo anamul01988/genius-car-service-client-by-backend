@@ -4,13 +4,16 @@ import fb from "../../images/login/facebook.png";
 import github1 from "../../images/login/github1.png";
 import auth from "../../firebase.init";
 import { useSignInWithGithub, useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Loading from "../Shared/Loading/Loading";
 const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
   const [signInWithFacebook, user2, loading2, error2] = useSignInWithGithub(auth);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
 
   let errorElement;
   if(loading || loading1 || loading2){
@@ -21,7 +24,10 @@ const SocialLogin = () => {
   }
 
   if (user || user1 || user2) {
-    navigate("/home");
+    // navigate("/home");
+    if(user){
+      navigate(from, {replace: true});
+    }
   }
   return (
     <div className="">

@@ -12,6 +12,8 @@ import ServiceDetail from './Pages/serviceDetail/ServiceDetail';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import NotFound from './Pages/Shared/NotFound/NotFound';
+import { ToastContainer } from 'react-toastify';
+
 
 function App() {
   return (
@@ -51,6 +53,7 @@ function App() {
         <Route path="*" element={<NotFound/>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer/>
     </div>
   );
 }
