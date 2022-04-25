@@ -18,16 +18,6 @@ function App() {
     <div>
       <Header></Header>
       <Routes>
-            {/* <Route path="/" element={
-          <RequireAuth>
-             <Home></Home>
-          </RequireAuth>
-        }></Route>
-        <Route path="/home" element={
-          <RequireAuth>
-               <Home></Home>
-          </RequireAuth>
-        }></Route> */}
         <Route path="/" element={
        
              <Home></Home>
@@ -43,7 +33,7 @@ function App() {
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
-        <Route path="/checkout" element={
+        <Route path="/checkout/:serviceId" element={
            <RequireAuth>
                <Checkout/>
            </RequireAuth>
